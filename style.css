@@ -1,0 +1,151 @@
+/* General setup */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #bbdefb;
+}
+
+.accordion {
+    display: flex;
+    width: 98%;
+    height: 98vh;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Accordion item styles */
+.accordion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: flex 0.3s ease-in-out;
+    background: #eaeaea;
+    cursor: pointer;
+    border-right: 1px solid #fff; /* Border between slides */
+    overflow: hidden;
+    width: 100%; /* Ensures each item takes equal width when collapsed */
+
+}
+
+/* Title Wrapper with fixed height */
+.accordion-item .title-wrapper {
+    width: 100%;
+    height: 60px; /* Fixed height for the title wrapper */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2196f3; /* Blue background for the title wrapper */
+    overflow: hidden;
+}
+
+/* Title styling */
+.accordion-item .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+/* Content styling */
+.accordion-item .content {
+    font-size: 16px;
+    text-align: left;
+    color: #333;
+    display: none; /* Hidden initially */
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 100%; /* Ensures content fits within the slide */
+    opacity: 0; /* Start with opacity 0 for a fade effect */
+    max-height: 0; /* Start with no height */
+}
+
+/* Show content when active with delay */
+.accordion-item.active .content {
+    display: block; /* Show content when active */
+    opacity: 1; /* Make content fully visible */
+    max-height: 1000px; /* Allow content to expand */
+}
+
+/* Inner wrapper inside content with margin */
+.accordion-item .content .inner-wrapper {
+    margin: 20px; /* 20px margin inside the content */
+}
+
+/* Active slide takes 80% of the container width */
+.accordion-item.active {
+    flex: 0.9; /* Active slide takes 80% of the container */
+}
+
+/* Inactive slides take equal space from the remaining 20% */
+.accordion-item:not(.active) {
+    flex: 0.02; /* Rest of the slides share the remaining 20% */
+}
+
+/* Make the collapsed slide names smaller */
+.accordion-item:not(.active) .title {
+    font-size: 12px; /* Smaller font size for collapsed slides */
+}
+
+
+/* Inner Wrapper Styling */
+.accordion-item .content .inner-wrapper {
+    line-height: 1.6; /* Improve line spacing for better readability */
+}
+
+/* Bullet Point Styling */
+.accordion-item .content ul {
+    list-style-type: disc; /* Default bullet points */
+    margin-left: 20px; /* Add space before bullet points */
+}
+
+.accordion-item .content li {
+    font-size: 16px; /* Adjust font size for readability */
+    color: #333; /* Dark gray color for the text */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Blue Bullet Points */
+.accordion-item .content ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 20px; /* Create room for custom bullets */
+}
+
+.accordion-item .content ul li:before {
+    content: '\2022'; /* Unicode for bullet */
+    color: #2196f3; /* Blue color for the bullet */
+    font-size: 24px; /* Size of the bullet */
+    margin-right: 10px; /* Space between the bullet and text */
+    vertical-align: middle; /* Align bullet with text */
+}
+
+.slider-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider img {
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
