@@ -3,16 +3,60 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #bbdefb;
 }
 
+header {
+    display: flex;
+    justify-content: space-between; /* Space between h1 and button */
+    align-items: center; /* Vertically center the items */
+    height: 4vh;
+    margin-bottom: 1vh;
+    width: 97%;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    color: #1565c0; /* Dark blue color */
+    font-size: 2rem;
+}
+
+h1 span {
+    color: white;
+    font-size: 76%;
+    margin-left: 5px;
+    transition: margin-left 1s ease-in-out;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #0d47a1; /* Navy Blue (complementary color) */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.cta-button:hover {
+    background-color: #1565c0; /* Dark blue on hover */
+}
+
+.cta-button:focus {
+    outline: none;
+}
+
 .accordion {
     display: flex;
-    width: 98%;
-    height: 98vh;
+    width: 97%;
+    height: 91vh;
     background: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -39,6 +83,7 @@ body {
     width: 100%;
     height: 60px; /* Fixed height for the title wrapper */
     display: flex;
+    flex-shrink: 0; /* Prevents the title-wrapper from shrinking */
     align-items: center;
     justify-content: center;
     background: #2196f3; /* Blue background for the title wrapper */
@@ -52,7 +97,10 @@ body {
     text-align: center;
     padding: 10px;
     color: white;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    opacity: 1;
 }
+
 
 /* Content styling */
 .accordion-item .content {
@@ -63,23 +111,45 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     width: 100%; /* Ensures content fits within the slide */
-    opacity: 0; /* Start with opacity 0 for a fade effect */
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 0s 1s; /* Transition for opacity and visibility */
     max-height: 0; /* Start with no height */
+}
+
+.accordion-item h2 {
+    display: none; /* Hide h2 elements */
 }
 
 /* Show content when active with delay */
 .accordion-item.active .content {
     display: block; /* Show content when active */
-    opacity: 1; /* Make content fully visible */
+    visibility: visible;
     max-height: 1000px; /* Allow content to expand */
+    transition-delay: 1s; /* Delay the appearance */
 }
 
 /* Inner wrapper inside content with margin */
 .accordion-item .content .inner-wrapper {
     margin: 20px; /* 20px margin inside the content */
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Active slide takes 80% of the container width */
+.accordion-item .content .inner-wrapper .content-container {
+    width: 49%;
+}
+
+.accordion-item .content .inner-wrapper .content-container:not(:has(~ *)) {
+    width: 100%;
+}
+
+.accordion-item .content .inner-wrapper .slider-container {
+    padding: 15px;
+    background: #d3d3d3;
+    width: 46%;
+    border:1px solid #bbbbbb;
+}
+    /* Active slide takes 80% of the container width */
 .accordion-item.active {
     flex: 0.9; /* Active slide takes 80% of the container */
 }
@@ -127,25 +197,24 @@ body {
 }
 
 .slider-container {
+    width: 100%; /* Full width */
+    height: 350px; /* Fixed height */
     position: relative;
-    width: 800px;
-    height: 400px;
     overflow: hidden;
 }
 
-.slider {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
 .slider img {
-    width: 800px;
-    height: 400px;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    position: absolute;
+    width: calc(100% - 30px);
+    max-height: calc(100% - 30px);
+    object-fit: cover; /* Maintain aspect ratio */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+    bottom: 50%;
+    translate: 0 50%;
 }
 
 .slider img.active {
-    opacity: 1;
+    opacity: 1; /* Show the active image */
+    z-index: 1; /* Ensure the active image is on top */
 }
