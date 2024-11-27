@@ -167,10 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupButton = document.querySelector('.popup-toggle-button'); // Corrected selector
     const popup = document.querySelector('.popup');
     const closeButton = document.querySelector('.close-popup');
-    console.log("ji",popupButton);
     // Show the popup when the button is clicked
     popupButton.addEventListener('click', () => {
-        console.log("does it work"); // This will confirm if the event is being triggered
         popup.classList.add('visible');
     });
 
@@ -179,3 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.classList.remove('visible');
     });
 });
+// Get the references div
+const referencesDiv = document.querySelector('.references');
+

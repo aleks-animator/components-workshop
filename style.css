@@ -177,6 +177,7 @@ h1 span {
     margin: 20px; /* 20px margin inside the content */
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .accordion-item .content .inner-wrapper .content-container {
@@ -239,6 +240,52 @@ h1 span {
     margin-right: 10px; /* Space between the bullet and text */
     vertical-align: middle; /* Align bullet with text */
 }
+
+
+.accordion-item .references {
+    position: absolute;
+    bottom: 0;
+    background: #d1d1d1;
+    color:black;
+    padding: 5px 10px;
+    height: 10px;
+    width: 70px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.accordion-item .references:hover {
+    padding: 10px;
+    height: 60px;
+    width: 200px;
+}
+
+.accordion-item .references h4 {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.accordion-item .references ul {
+    margin: 0;
+    padding: 5px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;    /* Prevent overflow */
+    text-overflow: ellipsis; /* Optionally add ellipsis if text is too long */
+    display: inline-block; /* Ensure it behaves like a block-level element */
+    max-width: 100%;
+}
+.accordion-item .references li {
+    font-size: 10px;
+    padding:0 0 0 5px;
+    margin: 0;
+    line-height: 0.8;
+}
+
+.accordion-item .references li a {
+   color:black
+}
+
 
 .slider-container {
     width: 100%; /* Full width */
@@ -374,12 +421,16 @@ h2 {
 }
 
 textarea, input {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #a1a1a1;
     border-radius: 5px;
     font-size: 14px;
+}
+
+textarea {
+    min-height: 120px;
 }
 
 button {
@@ -468,8 +519,8 @@ label {
 /* Popup Button Styling */
 .popup-toggle-button {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 5px;
+    right: 5px;
     padding: 10px 20px;
     background-color: #0d47a1;
     color: white;
@@ -530,4 +581,3 @@ label {
 .close-popup:hover {
     background-color: #c62828;
 }
-
