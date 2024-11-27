@@ -117,6 +117,13 @@ updateAccordionTitles();
 
 // Add spacebar key event listener for manual accordion change
 document.addEventListener("keydown", (event) => {
+    const popup = document.querySelector('.popup'); // Select the popup
+
+    // Only prevent the spacebar action if the popup is visible
+    if (popup && popup.classList.contains('visible')) {
+        return; // Exit the function if popup is visible
+    }
+
     if (event.code === "Space") {
         event.preventDefault(); // Prevent scrolling
 
@@ -150,4 +157,25 @@ function initializeSlider(sliderContainer) {
 // Get all slider containers and initialize each one
 document.querySelectorAll('.slider-container').forEach(sliderContainer => {
     initializeSlider(sliderContainer);
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const popupButton = document.querySelector('.popup-toggle-button'); // Corrected selector
+    const popup = document.querySelector('.popup');
+    const closeButton = document.querySelector('.close-popup');
+    console.log("ji",popupButton);
+    // Show the popup when the button is clicked
+    popupButton.addEventListener('click', () => {
+        console.log("does it work"); // This will confirm if the event is being triggered
+        popup.classList.add('visible');
+    });
+
+    // Hide the popup when the close button is clicked
+    closeButton.addEventListener('click', () => {
+        popup.classList.remove('visible');
+    });
 });

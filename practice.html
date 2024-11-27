@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Workshop - Pratice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+
+<header class="practice">
+    <h1>KEEN ON <span>Workshop</span></h1>
+    <button id="toggleGroupGeneratorButton" class="toggle-button">Show Group Generator</button>
+</header>
+
+<div class="container">
+    <!-- Toggle Button for Group Generator -->
+
+
+    <!-- Group Generator (Initially hidden) -->
+    <div id="groupGenerator" class="group-generator hidden">
+        <h2>Group Generator</h2>
+        <label for="namesTextarea">Enter Names (one per line):</label>
+        <textarea id="namesTextarea" placeholder="Enter names, one per line"></textarea>
+        <label for="groupCount">Number of Groups:</label>
+        <input id="groupCount" type="number" placeholder="Number of groups" />
+        <button id="generateButton">Generate Groups</button>
+        <div id="generatedGroups"></div>
+    </div>
+
+    <!-- Component Sheets -->
+    <div class="component-sheets">
+        <h2>Component Sheets
+            <span class="tooltip">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="tooltip-content">
+                        <h3>HTML (The Structure):</h3>
+                        <p>Think of HTML as the blueprint or framework of a house. It defines what goes where, such as headings, paragraphs, images, and links.</p>
+                        <h3>CSS (The Design/Decoration):</h3>
+                        <p>CSS is like the interior design and paint of the house. It decides how everything looks—colors, shapes, and spacing.</p>
+                        <h3>JavaScript (The Interactivity/Functionality):</h3>
+                        <p>JavaScript adds the dynamic and interactive parts, like buttons that respond to clicks or animations.</p>
+                        <h4>In Summary:</h4>
+                        <ul>
+                            <li>HTML provides the skeleton.</li>
+                            <li>CSS dresses it up.</li>
+                            <li>JavaScript brings it to life.</li>
+                        </ul>
+                    </div>
+                </span>
+        </h2>
+        <div id="componentForm">
+            <label for="componentName">Component Name:</label>
+            <input id="componentName" type="text" placeholder="Enter component name" />
+            <label for="contentTextarea">The Structure:</label>
+            <textarea id="contentTextarea" placeholder="Enter component content"></textarea>
+            <label for="styleTextarea">The Design/Decoration:</label>
+            <textarea id="styleTextarea" placeholder="Enter component styles"></textarea>
+            <label for="behaviorTextarea">The Interactivity/Functionality:</label>
+            <textarea id="behaviorTextarea" placeholder="Enter component behavior"></textarea>
+            <label for="reusabilityTextarea">Component Reusability:</label>
+            <textarea id="reusabilityTextarea" placeholder="Enter component reusability"></textarea>
+            <button id="saveComponentButton">Save Component</button>
+        </div>
+        <div id="savedComponents"></div>
+    </div>
+
+</div>
+
+<div class="container container--button">
+    <a class="cta-button" href="workshop.html">Back to Presenation</a>
+</div>
+
+
+<script src="sheet.js"></script>
+</body>
+</html>
