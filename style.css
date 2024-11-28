@@ -164,6 +164,18 @@ h1 span {
     color: #1565c0;
 }
 
+.accordion-item h3.special {
+    font-size: 32px;
+    color:maroon;
+    padding: 10px;
+    border: 1px solid darkblue;
+    background: darkgray;
+}
+.accordion-item h4 {
+    font-size: 16px;
+    color: #1565c0;
+}
+
 /* Show content when active with delay */
 .accordion-item.active .content {
     display: block; /* Show content when active */
@@ -396,6 +408,7 @@ h2 {
     margin-bottom: 5px;
     color: #0056b3;
 }
+
 
 .tooltip-content p {
     font-size: 14px;

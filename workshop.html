@@ -33,8 +33,9 @@
                     <h3>About the Workshop</h3>
                     <ul>
                         <li>This workshop focuses on <strong>UI front-end components</strong>, though components are widely used across software development and engineering.</li>
-                        <li>While I'm not an expert, I’m a passionate enthusiast with hands-on experience in front-end components, and I'm excited to share my insights and dive deeper into these concepts with you.</li>
-                        <li>This is not a classic presentation—expect more detailed content for further reading later on.</li>
+                        <li>While I'm not an expert but  a passionate enthusiast.</li>
+                        <li>Workshop != Presentation</li>
+                        <li>Intended as source/documentation, with more detailed content than presentation for further reading later on.</li>
                     </ul>
                     <h3>Purpose of Workshop</h3>
                     <ul>
@@ -63,6 +64,7 @@
             <div class="inner-wrapper">
                 <div class="content-container">
                     <h2>Workshop Summary</h2>
+                    <h3>Workshop Summary</h3>
                     <ul>
                         <li><strong>Defining Components:</strong> What are front-end components and why is using them good </li>
                         <li><strong>Component's Widespread Use:</strong> Examples across front-end, mobile, and design systems.</li>
@@ -70,6 +72,14 @@
                         <li><strong>Practical Example:</strong> In-detail review of <em>Info card component in Premio.ch project</em></li>
                         <li><strong>Hands On:</strong> <em>Recognizing and forming abstract components in JTI HOP</em></li>
                     </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <h4>Before we go off-topic - Custom Tool for Presenting</h4>
+                    <p> Experimenting how much is this approach time-efficient and effort-efficient </p>
+                    <p> Lack of time for additional features: Raise Hand Widget, Most Important Terms output.... Also code is unoptimized </p>
+
+
                 </div>
             </div>
         </div>
@@ -81,16 +91,16 @@
         <div class="content">
             <div class="inner-wrapper">
                 <div class="content-container">
-                    <h2>Front-End Components & CBA</h2>
-                    <p><strong>Frontend components follow the principles of Component-Based Architecture (CBA)</strong></p>
-                    <p>While there’s no universally agreed definition for front-end components, they are built on the principles of CBA, which focus on modularity, reusability, and independence. The purpose is to create more efficient and scalable applications by dividing the interface into smaller, reusable parts.</p>
+                    <h2>Defining Components</h2>
+                    <h3 class="special">"Components are self-contained, reusable, and replaceable units"</h3>
+                    <p>While there’s no universally agreed definition for components, they are built on the principles of Component-Based Architecture (CBA), which focus on modularity, reusability, and independence. The purpose is to create more efficient and scalable applications by dividing the interface into smaller, reusable parts.</p>
                     <p><strong>UI front-end component definition:</strong> It is a group of one or more HTML elements, styled and enhanced with various systems or libraries to add functionality and options, making them functional, reusable parts of the user interface (UI) of a website.</p>
 
-                    <h3>Importance</h3>
+                    <h3>Benefits of using components:</h3>
                     <ul>
                         <li><strong>Reducing Redundancy and Errors:</strong> Reusing tested components eliminates duplication of effort, accelerates development timelines, and minimizes the chance of introducing errors.</li>
                         <li><strong>Easier Maintenance:</strong> Individual components can be updated or replaced without affecting the entire system, making projects more manageable over time.</li>
-
+                        <li><strong>Consistency:</strong> Since components are designed for reuse, they help ensure that web pages or applications maintain a uniform and cohesive appearance across all elements</li>
                         <li><strong>Better Design Planning:</strong> Understanding this approach enables us to plan and design websites more effectively by identifying reusable components early on, ensuring consistency in design and functionality.</li>
                         <li><strong>Predictable Structure and Location:</strong> Components are organized predictably, making it quick and easy to locate and debug their code.</li>
                     </ul>
@@ -120,12 +130,12 @@
                     </ul>
                     <h3>UI Front-end components are units that consist of multiple elements, which are designed to have their own:</h3>
                     <ul>
-                        <li><strong>HTML -Structure</strong>: The arrangement and layout of elements.</li>
-                        <li><strong>CSS -Look</strong>: The styling that determines how the component appears (e.g., color, font, size).</li>
-                        <li><strong>JavaScript (Usually) - Functionality</strong>: The behavior of the component (e.g., clicking a button or submitting a form).</li>
-                        <li><strong>Flexible</strong>: Components can be styled or behave differently based on their context.</li>
+                        <li><strong>Structural Element (outputs in HTML)</strong>: The arrangement and layout of elements.</li>
+                        <li><strong>Visual Setting (outputs in  CSS)</strong>: The styling that determines how the component appears (e.g., color, font, size).</li>
+                        <li><strong>Functionality - (outputs in  JavaScript) - </strong>: The behavior of the component (e.g., clicking a button or submitting a form).</li>
                     </ul>
                     <h3>Props and Slots</h3>
+                    <p>Flexibility: Components can be styled or behave differently based on their context</p>
                     <p><strong>Props</strong> allow data to be passed into components from a parent, enabling the component to be dynamically configured and reusable in various scenarios. They ensure that components can adjust their behavior or appearance based on specific input values.</p>
                     <p><strong>Slots</strong> provide a mechanism for injecting custom content into a component. This makes components more flexible and adaptable by allowing developers to define and use placeholders for content while preserving the overall structure and functionality of the component.</p>
                 </div>
@@ -194,8 +204,8 @@
         <div class="content">
             <div class="inner-wrapper">
                 <div class="content-container">
-                    <h2>Our Current Use Case - SDC Components in Drupal (Part 1)</h2>
-                    <p>In Drupal, **Single Directory Components (SDC)** are used to organize related files for components in a single directory. This method ensures better modularity and maintainability by grouping all necessary files together.</p>
+                    <h2>Our Current Use Case - SDC Components in Drupal</h2>
+                    <p>In Drupal, <strong>Single Directory Components (SDC)</strong> are used to organize related files for components in a single directory. This method ensures better modularity and maintainability by grouping all necessary files together.</p>
                     <p><strong>What are SDCs?</strong> SDCs consist of all files related to a specific component, including:</p>
                     <ul>
                         <li><strong>Twig templates</strong>: The HTML structure for the component's display.</li>
@@ -204,18 +214,6 @@
                         <li><strong>Assets</strong>: Images, icons, or other media files related to the component.</li>
                         <li><strong>YML files</strong>: The configuration files (e.g., `component-name.yml`) that define how the component is registered and rendered in Drupal.</li>
                     </ul>
-                    <p><strong>YML Files:</strong> The YML files are an essential part of SDCs in Drupal, as they define the settings and configuration for the component, including which Twig templates to use, the default styles, and other behavior-specific settings.</p>
-                    <p>This approach streamlines the management of components, making them easier to develop, update, and reuse across different sections of the site.</p>
-
-                    <h2>Our Current Use Case - SDC Components in Drupal (Part 2)</h2>
-                    <p>**Single Directory Components (SDC)** are tightly integrated into Drupal themes, thanks to YML files that help configure and render the components dynamically. Here's how SDCs work within Drupal's theme layer:</p>
-                    <ul>
-                        <li><strong>YML Configuration:</strong> Each SDC is defined using a **YML file** (e.g., `product-card.yml`) that specifies the component's configuration, including which Twig template file to use, which regions to display, and any specific component settings.</li>
-                        <li><strong>Component Directory Structure:</strong> The component's directory holds all related files, such as Twig templates, CSS, JS, assets, and the YML file. The YML file links these resources together, ensuring proper integration.</li>
-                        <li><strong>Rendering SDC Components:</strong> Drupal uses the YML file to locate the appropriate Twig template and applies any necessary logic for rendering the component based on the context.</li>
-                        <li><strong>Flexibility and Reusability:</strong> With the YML file, each component can be customized based on the context, making it easy to reuse components across the site without duplicating code or resources.</li>
-                    </ul>
-                    <p>The combination of YML files and the component structure ensures that **SDCs** in Drupal are reusable, easy to manage, and can be dynamically configured to fit different contexts and requirements.</p>
                 </div>
             </div>
             <div class="references">
@@ -244,14 +242,12 @@
                     </ul>
                     <h3>Case of Improvement</h3>
                     <ul>
-                        <li><strong>Problem: </strong> The component is still not self-contained, as there are styles related to Drupal.
+                        <li><strong>Problem 1: </strong> The component is not <strong>completely self-contained</strong> as there are styles related to Drupal in it.
                         </li>
 
-                        <li>Content Object is rendered in copmonend and it can be in future usages anyting, and component couldnt be able at least visually to for it.
-                        </li>
-                        <li>Urgency for improvement - <strong>Low</strong> - While it almost certanly won't hinder functional impact and scalaibilty it affect code cleaness and it gives bad impression </li>
-                        <li>
-                            <strong>Solution:</strong> Add an additional slot for Drupal-specific content,  CSS that is used for this slot should be in the main CSS file because its for specfic case(s).
+                        <li><strong>Problem 2: </strong>System-Specfic Content(Content Object) is rendered directly in component, and component can't be ready for all (future) outputs.</li>
+                        <li>Urgency for improvements - <strong>Low</strong> - While it almost certainly won't hinder functionality or scalability, it affects code cleanliness and gives a poor impression.</li>
+                        <li><strong>Solution:</strong> Add an additional slot for Drupal-specific content,  CSS that is used for this slot should be in the main CSS file because its for specfic case(s).
                         </li>
                     </ul>
                 </div>
