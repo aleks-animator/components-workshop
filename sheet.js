@@ -73,7 +73,7 @@ function saveComponent() {
     const behaviorTextarea = document.getElementById('behaviorTextarea').value;
     const reusabilityTextarea = document.getElementById('reusabilityTextarea').value;
 
-    if (componentName && contentTextarea && styleTextarea && behaviorTextarea && reusabilityTextarea) {
+    if (componentName && contentTextarea && styleTextarea) {
         const component = {
             name: componentName,
             content: contentTextarea,

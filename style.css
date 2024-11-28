@@ -351,6 +351,9 @@ h1 span {
     width: 100%;  /* Component sheets will take full width when group-generator is hidden */
 }
 
+.group {
+    margin-top: 10px;
+}
 /* Alternatively, use nth-child to ensure the layout adjustment */
 .container > .group-generator.hidden ~ .component-sheets {
     width: 100%;  /* Adjust the width of component-sheets if group-generator is hidden */
