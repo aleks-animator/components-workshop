@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #bbdefb;
+    background-color: #8ab8e3;
 }
 
 body.intro,
@@ -109,12 +109,12 @@ h1 span {
     align-items: center;
     justify-content: flex-start;
     transition: flex 0.3s ease-in-out;
-    background: #eaeaea;
+    background: #e0e0e0;
     cursor: pointer;
     border-right: 1px solid #fff; /* Border between slides */
     overflow: hidden;
     width: 100%; /* Ensures each item takes equal width when collapsed */
-
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(0, 0, 0, 0);
 }
 
 /* Title Wrapper with fixed height */
@@ -125,7 +125,7 @@ h1 span {
     flex-shrink: 0; /* Prevents the title-wrapper from shrinking */
     align-items: center;
     justify-content: center;
-    background: #2196f3; /* Blue background for the title wrapper */
+    background: #1e8cd1;
     overflow: hidden;
 }
 
@@ -209,6 +209,11 @@ h1 span {
     /* Active slide takes 80% of the container width */
 .accordion-item.active {
     flex: 0.9; /* Active slide takes 80% of the container */
+    background: #eaeaea;
+}
+
+.accordion-item.active .title-wrapper {
+    background: #2196f3;
 }
 
 /* Inactive slides take equal space from the remaining 20% */
